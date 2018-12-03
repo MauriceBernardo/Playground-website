@@ -7,6 +7,9 @@
     <nuxt-link 
       to="./Calc" 
       class="header-option">Calculator</nuxt-link>
+    <nuxt-link 
+      to="./Subscription" 
+      class="header-option">Subscription</nuxt-link>
   </div>
 </template>
 
