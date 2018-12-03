@@ -1,8 +1,19 @@
 <template>
   <div>
+    <Mainmenu/>
     <nuxt/>
   </div>
 </template>
+
+<script>
+import Mainmenu from './../components/Mainmenu.vue'
+export default {
+  components: {
+    Mainmenu
+  }
+}
+</script>
+
 
 <style>
 html {
