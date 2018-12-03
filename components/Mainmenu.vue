@@ -19,15 +19,18 @@ export default {}
   width: 100%;
   height: 60px;
   display: flex;
-  background-color: bisque;
+  background-color: cadetblue;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  position: fixed;
 }
 
 .header-option {
   font-family: cursive;
   font-size: 30px;
   margin-left: 10px;
+  text-decoration: underline;
+  color: indigo;
 }
 </style>
