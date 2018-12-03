@@ -33,7 +33,7 @@ export default {}
   font-family: cursive;
   font-size: 30px;
   margin-left: 10px;
-  text-decoration: underline;
-  color: indigo;
+  text-decoration: none;
+  color: rgb(87, 25, 131);
 }
 </style>
