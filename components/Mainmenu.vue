@@ -5,7 +5,7 @@
       to="./" 
       class="header-option">Home</nuxt-link>
     <nuxt-link 
-      to="./Calculator" 
+      to="./Calc" 
       class="header-option">Calculator</nuxt-link>
   </div>
 </template>

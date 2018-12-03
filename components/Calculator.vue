@@ -1,43 +1,41 @@
 <template>
-  <div class="container">
-    <div 
-      class="calculator" 
-      @click="handleClick">
-      <div class="result">{{ result }}</div>
-      <div class="first-row">
-        <button class="clear">C</button>
-        <button class="back-arrow">←</button>
-        <button class="operation">÷</button>
-      </div>
-      <div class="main-row">
-        <button class="main-number">7</button>
-        <button class="main-number middle">8</button>
-        <button class="main-number middle">9</button>
-        <button class="operation">x</button>
-      </div>
-      <div class="main-row">
-        <button class="main-number">4</button>
-        <button class="main-number middle">5</button>
-        <button class="main-number middle">6</button>
-        <button class="operation">-</button>
-      </div>
-      <div class="main-row">
-        <button class="main-number">1</button>
-        <button class="main-number middle">2</button>
-        <button class="main-number middle">3</button>
-        <button class="operation">+</button>
-      </div>
-      <div class="bottom-row">
-        <button class="zero">0</button>
-        <button class="operation">=</button>
-      </div>
+  <div 
+    class="calculator" 
+    @click="handleClick">
+    <div class="result">{{ result }}</div>
+    <div class="first-row">
+      <button class="clear">C</button>
+      <button class="back-arrow">←</button>
+      <button class="operation">÷</button>
+    </div>
+    <div class="main-row">
+      <button class="main-number">7</button>
+      <button class="main-number middle">8</button>
+      <button class="main-number middle">9</button>
+      <button class="operation">x</button>
+    </div>
+    <div class="main-row">
+      <button class="main-number">4</button>
+      <button class="main-number middle">5</button>
+      <button class="main-number middle">6</button>
+      <button class="operation">-</button>
+    </div>
+    <div class="main-row">
+      <button class="main-number">1</button>
+      <button class="main-number middle">2</button>
+      <button class="main-number middle">3</button>
+      <button class="operation">+</button>
+    </div>
+    <div class="bottom-row">
+      <button class="zero">0</button>
+      <button class="operation">=</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
+  name: 'Calculator',
   data() {
     return {
       result: 0,
@@ -128,13 +126,6 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #222;
-}
-
 .calculator {
   background-color: black;
   margin-top: 40px;
