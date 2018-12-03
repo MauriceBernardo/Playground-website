@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { store } from './../store/store.js'
 export default {
   data() {
     return {
@@ -24,7 +25,9 @@ export default {
   },
   methods: {
     valueInputted() {
-      this.$emit('valueInputted', this.Name, this.Email)
+      this.$store.name = this.Name
+      this.$store.email = this.Email
+      this.$emit('valueInputted')
     }
   }
 }

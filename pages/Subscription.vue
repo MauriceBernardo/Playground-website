@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { store } from './../store/store.js'
 import forms from './../components/Forms.vue'
 export default {
   components: {
@@ -23,12 +24,12 @@ export default {
     }
   },
   methods: {
-    showComment(name, email) {
-      if (name === '' || email === '') {
+    showComment() {
+      if (this.$store.state.name === '' || this.$store.state.email === '') {
         alert('Please fill in your data before submitting')
       } else {
-        this.name = name
-        this.email = email
+        this.name = this.$store.name
+        this.email = this.$store.email
         this.responded = true
       }
     }
