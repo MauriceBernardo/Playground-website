@@ -19,5 +19,7 @@ export default {
   flex-direction: column;
   align-items: center;
   background: #222;
+  height: 100%;
+  width: 100%;
 }
 </style>
