@@ -2,15 +2,21 @@
   <div class="form">
     <input 
       v-model="Name" 
-      type="text" 
+      type="form__text" 
       placeholder="type your name here">
     <input 
       v-model="Email" 
-      type="email" 
+      type="form__email" 
       placeholder="type your email here">
     <button 
-      class="submit" 
-      @click="valueInputted">Submit</button>
+      class="form__submit" 
+      @click.prevent="valueInputted">Submit</button>
+    <label 
+      v-show="invalid"
+      for = "form__submit" 
+      class="form__error">
+      Please type input in a correct format
+    </label>
   </div>
 </template>
 
@@ -20,20 +26,29 @@ export default {
   data() {
     return {
       Name: '',
-      Email: ''
+      Email: '',
+      invalid: false
     }
   },
   methods: {
     valueInputted() {
-      this.$store.name = this.Name
-      this.$store.email = this.Email
-      this.$emit('valueInputted')
+      let emailChecker = new RegExp(
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      )
+      if (!this.Email.match(emailChecker)) {
+        this.invalid = true
+      } else {
+        this.$store.name = this.Name
+        this.$store.email = this.Email
+        this.invalid = false
+        this.$emit('valueInputted')
+      }
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
 .form {
   margin: 40px 0;
   width: 300px;
@@ -42,5 +57,10 @@ export default {
   justify-items: space-evenly;
   font-family: monospace;
   font-size: 32px;
+
+  &__error {
+    color: red;
+    font-size: 12px;
+  }
 }
 </style>
