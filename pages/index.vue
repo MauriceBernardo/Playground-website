@@ -4,15 +4,28 @@
       <h1 class="title">
         Playground Website
       </h1>
-      <h2 class="subtitle">
+      <h2 
+        v-if="name === undefined" 
+        class="subtitle">
         Welcome to my playground website
+      </h2>
+      <h2 
+        v-else 
+        class="subtitle">
+        Welcome back {{ name }}
       </h2>
     </div>
   </section>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      name: this.$store.name
+    }
+  }
+}
 </script>
 
 <style>
