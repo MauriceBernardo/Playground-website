@@ -128,14 +128,13 @@ export default {
 <style scoped>
 .calculator {
   background-color: black;
-  margin-top: 40px;
   height: 470px;
   width: 300px;
   display: flex;
   flex-direction: column;
   justify-items: space-evenly;
   font-family: monospace;
-  font-size: 32px;
+  font-size: 23px;
 }
 
 .result {
