@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <Calculator />
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.container-fluid {
   display: flex;
   flex-direction: column;
   align-items: center;

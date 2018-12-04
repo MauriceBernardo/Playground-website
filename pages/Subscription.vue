@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <forms @valueInputted = "showComment"/>
     <p 
       v-if="responded" 
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.container-fluid {
   display: flex;
   flex-direction: column;
   align-items: center;
