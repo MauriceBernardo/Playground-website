@@ -1,22 +1,31 @@
 <template>
-  <div class="form">
-    <input 
-      v-model="Name" 
-      type="form__text" 
-      placeholder="type your name here">
-    <input 
-      v-model="Email" 
-      type="form__email" 
-      placeholder="type your email here">
-    <button 
-      class="form__submit" 
-      @click.prevent="valueInputted">Submit</button>
-    <label 
-      v-show="invalid"
-      for = "form__submit" 
-      class="form__error">
-      Please type input in a correct format
-    </label>
+  <div>
+    <b-form class="form">
+      <b-form-group>
+        <b-form-input 
+          v-model="form.email"
+          type="email"
+          required
+          placeholder="Enter email"/>
+      </b-form-group>
+      <b-form-group>
+        <b-form-input 
+          v-model="form.name"
+          type="text"
+          required
+          placeholder="Enter name"/>
+      </b-form-group>
+      <b-button 
+        variant="primary"
+        @click= "valueInputted">Submit</b-button>
+      <b-alert
+        :show = "invalid" 
+        class="form__error"
+        dismissible
+        @dismissed="invalid=false">
+        Please input in the correct format
+      </b-alert>
+    </b-form>
   </div>
 </template>
 
@@ -25,8 +34,10 @@ import { store } from './../store/store.js'
 export default {
   data() {
     return {
-      Name: '',
-      Email: '',
+      form: {
+        name: '',
+        email: ''
+      },
       invalid: false
     }
   },
@@ -35,11 +46,11 @@ export default {
       let emailChecker = new RegExp(
         /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       )
-      if (!this.Email.match(emailChecker)) {
+      if (!this.form.email.match(emailChecker)) {
         this.invalid = true
       } else {
-        this.$store.name = this.Name
-        this.$store.email = this.Email
+        this.$store.name = this.form.name
+        this.$store.email = this.form.email
         this.invalid = false
         this.$emit('valueInputted')
       }
@@ -50,17 +61,14 @@ export default {
 
 <style lang='scss' scoped>
 .form {
-  margin: 40px 0;
-  width: 300px;
   display: flex;
   flex-direction: column;
-  justify-items: space-evenly;
-  font-family: monospace;
-  font-size: 32px;
+  font-family: cursive;
+  font-size: 23px;
 
   &__error {
-    color: red;
     font-size: 12px;
+    margin-top: 15px;
   }
 }
 </style>
