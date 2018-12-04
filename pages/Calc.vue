@@ -18,8 +18,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: #222;
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
 }
 </style>
