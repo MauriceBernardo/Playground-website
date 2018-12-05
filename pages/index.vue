@@ -77,7 +77,7 @@ export default {
 .container-fluid {
   min-height: 100vh;
   display: flex;
-  background-color: #ccc;
+  background-color: #222;
 }
 
 .title {
@@ -91,5 +91,9 @@ export default {
   color: inherit;
   word-spacing: 5px;
   padding-bottom: 15px;
+}
+
+.caption {
+  justify-content: center;
 }
 </style>
