@@ -3,18 +3,20 @@
     <b-navbar 
       toggleable="md" 
       type="dark" 
-      variant="info"
+      variant="primary"
       class="header__navbar">
-      <nuxt-link 
-        exact 
-        to="./" 
-        class="header__option">Home</nuxt-link>
-      <nuxt-link 
-        to="./Calc" 
-        class="header__option">Calculator</nuxt-link>
-      <nuxt-link 
-        to="./Subscription" 
-        class="header__option">Subscription</nuxt-link>
+      <b-navbar-nav>
+        <nuxt-link 
+          exact 
+          to="./" 
+          class="header__option">Home</nuxt-link>
+        <nuxt-link 
+          to="./Calc" 
+          class="header__option">Calculator</nuxt-link>
+        <nuxt-link 
+          to="./Subscription" 
+          class="header__option">Subscription</nuxt-link>
+      </b-navbar-nav>
     </b-navbar>
   </div>
 </template>
@@ -34,7 +36,7 @@ export default {}
     font-family: cursive;
     margin: 5px 20px;
     text-decoration: none;
-    color: blue;
+    color: lightgray;
   }
 }
 </style>
