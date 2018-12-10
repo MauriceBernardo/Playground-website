@@ -1,0 +1,41 @@
+<template>
+  <button 
+    class="baseButton" 
+    @click="handleClick">{{ symbol }}</button>
+</template>
+
+<script>
+export default {
+  name: 'Basebutton',
+  props: {
+    // eslint-disable-next-line vue/require-prop-types
+    symbol: {
+      default: ''
+    }
+  },
+  methods: {
+    handleClick(e) {
+      this.$emit('clicked')
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+.baseButton {
+  border: none;
+  padding: 0;
+  flex: 1;
+  background-color: #999;
+  color: black;
+  margin: 0 0.8px 0 0;
+
+  &:hover {
+    background-color: #aaa;
+  }
+
+  &:active {
+    background-color: #888;
+  }
+}
+</style>
