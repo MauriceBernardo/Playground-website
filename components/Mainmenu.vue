@@ -1,33 +1,35 @@
 <template>
-  <div class="header">
-    <b-navbar 
-      toggleable="md" 
-      type="dark" 
-      variant="info"
-      class="navbar">
+  <b-navbar 
+    toggleable="md" 
+    type="dark" 
+    variant="primary"
+    class="header__navbar sticky-top bd-navbar">
+    <b-navbar-nav>
       <nuxt-link 
         exact 
         to="./" 
-        class="header-option">Home</nuxt-link>
+        class="header__option">Home</nuxt-link>
       <nuxt-link 
         to="./Calc" 
-        class="header-option">Calculator</nuxt-link>
+        class="header__option">Calculator</nuxt-link>
       <nuxt-link 
         to="./Subscription" 
-        class="header-option">Subscription</nuxt-link>
-    </b-navbar>
-  </div>
+        class="header__option">Subscription</nuxt-link>
+    </b-navbar-nav>
+  </b-navbar>
 </template>
 
 <script>
 export default {}
 </script>
 
-<style scoped>
-.header-option {
-  font-family: cursive;
-  margin: 5px 20px;
-  text-decoration: none;
-  color: blue;
+<style lang='scss' scoped>
+.header {
+  &__option {
+    font-family: cursive;
+    margin: 5px 20px;
+    text-decoration: none;
+    color: #000335;
+  }
 }
 </style>

@@ -49,5 +49,6 @@ export default {
 
 .response {
   color: aliceblue;
+  margin-top: 15px;
 }
 </style>
